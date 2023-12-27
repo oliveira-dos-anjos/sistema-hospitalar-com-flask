@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamentos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='agendar.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Agendamentos</h1>
+        <form action="{{ url_for('agendar', paciente_id=0) }}" method="POST">
+            <label for="paciente">Digite o nome do paciente:</label>
+            <input type="text" name="nome" id="nome" required><br><br>
+            <label for="data">Data</label>
+            <input type="date" name="data" id="data" required><br><br>
+            <label for="hora">Hora</label>
+            <input type="time" name="hora" id="hora" required><br><br>
+            <label for="descricao">Decrição</label>
+            <textarea name="descricao" id="descricao" cols="30" rows="2" required></textarea>
+        </form>
+        <a href="{{ url_for('index') }}" class="agendar-btn submit-btn">Agendar consulta</a>
+        <a href="{{ url_for('index') }}" class="back-btn submit-btn">Voltar para çista de pacientes</a>
+    </div>    
+</body>
+</html>
